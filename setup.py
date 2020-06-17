@@ -21,8 +21,8 @@ with open("README.md", "r") as fh:
     packages=setuptools.find_packages(),
     python_reqiures=">=3.5",
     install_requires = REQUIRED,
-    classifiers=["Programming Language :: Python :: 3"
-    "License :: OSI Approved :: MIT License"
+    classifiers=["Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     ]
     )
