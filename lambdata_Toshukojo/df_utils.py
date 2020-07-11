@@ -1,13 +1,12 @@
 '''
 utility functions for working with DataFrames
 '''
-import pandas
-import numpy
+import pandas as pd
+import numpy as np
 import string
 from sklearn.model_selection import train_test_split
 
-
-TEST_DF = pandas.DataFrame([1, 2, 3])
+TEST_DF = pandas.DataFrame([1, 2, 3, 0, 0, 0, 0, 0, 1, 0, 4])
 
 
 class dsfunctions(self):
@@ -58,17 +57,23 @@ class dsfunctions(self):
         """Return the square root of x using Newton's Method."""
         val = n
         while True:
-        last = val
-        val = (val + n / val) * 0.5
-        if abs(val - last) < 1e-9:
-            break
+            last = val
+            val = (val + n / val) * 0.5
+            if abs(val - last) < 1e-9:
+                break
         return val
+    
+    def lazy_sqrt(n):
+        return n ** 0.5
 
-    def list_to_series(List):
+    def list_to_series(list, name, dataframe):
         '''
         Single function to take a list, turn it into a series and add it to a
         dataframe as a new column
         '''
-        pd.DataFrame(List)
-        pass
+        name = name
+        series = pd.Series(list)
+        dataframe[name] = series
+        return dataframe
+ 
 
